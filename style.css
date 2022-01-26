@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Expletus+Sans&display=swap");
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  font-family: "Expletus Sans", cursive;
+}
+.portfolio {
+  display: flex;
+  min-width: 450px;
+  max-width: 900px;
+  height: 400px;
+  margin: 4rem auto;
+}
+.image {
+  min-width: 60px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  overflow: hidden;
+  position: relative;
+}
+.image.active {
+  flex-grow: 100;
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 7px;
+  background-size: auto 100%;
+}
+.image:not(.active) {
+  flex-grow: 1;
+  border-radius: 5px;
+}
+.text-container {
+  width: 100%;
+  height: 400px;
+  padding: 2rem;
+  visibility: hidden;
+  transform: translateY(300px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  background: linear-gradient(354deg, black 0%, transparent 72%);
+  color: white;
+  overflow: hidden;
+}
+.text {
+  position: absolute;
+  bottom: 5rem;
+}
+.active .text-container {
+  visibility: visible;
+  transform: translateY(0px);
+  opacity: 1;
+}
